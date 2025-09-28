@@ -53,7 +53,7 @@ export default function ImageGallery({ images, alt }: ImageGalleryProps) {
       </div>
 
       {/* Lightbox Modal */}
-      {selectedIndex !== null && images[selectedIndex] && (
+      {selectedIndex !== null && selectedIndex < images.length && images[selectedIndex] && (
         <div className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center p-4">
           {/* Close Button */}
           <button
