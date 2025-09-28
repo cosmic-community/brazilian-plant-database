@@ -128,7 +128,7 @@ export default async function SpeciesDetailPage({ params }: SpeciesPageProps) {
             </div>
 
             {/* Main Image */}
-            {images.length > 0 && (
+            {images.length > 0 && images[0] && (
               <div className="relative">
                 <img
                   src={`${images[0].imgix_url}?w=600&h=400&fit=crop&auto=format,compress`}
