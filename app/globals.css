@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-white text-secondary-900;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-secondary-100;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-secondary-400 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-secondary-600;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .btn-primary {
+    @apply bg-primary-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply bg-white text-secondary-700 px-6 py-3 rounded-lg font-medium border border-secondary-200 hover:bg-secondary-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+  }
+
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-width {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .prose-custom {
+    @apply text-secondary-600 leading-relaxed;
+  }
+
+  .prose-custom p {
+    @apply mb-4;
+  }
+
+  .prose-custom h1,
+  .prose-custom h2,
+  .prose-custom h3,
+  .prose-custom h4 {
+    @apply text-secondary-900 font-semibold mb-3;
+  }
+
+  .prose-custom h1 {
+    @apply text-3xl;
+  }
+
+  .prose-custom h2 {
+    @apply text-2xl;
+  }
+
+  .prose-custom h3 {
+    @apply text-xl;
+  }
+
+  .prose-custom ul,
+  .prose-custom ol {
+    @apply mb-4 pl-6;
+  }
+
+  .prose-custom li {
+    @apply mb-2;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-grid {
+    background-image: 
+      linear-gradient(rgba(22, 163, 74, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(22, 163, 74, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.6s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scale-in 0.4s ease-out;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Loading spinner */
+.spinner {
+  @apply w-8 h-8 border-4 border-secondary-200 border-t-primary-600 rounded-full animate-spin;
+}
+
+/* Image loading placeholder */
+.image-placeholder {
+  @apply bg-gradient-to-br from-secondary-100 to-secondary-200 animate-pulse;
+}
+
+/* Conservation status badges */
+.status-LC {
+  @apply bg-green-100 text-green-800 border-green-200;
+}
+
+.status-NT {
+  @apply bg-yellow-100 text-yellow-800 border-yellow-200;
+}
+
+.status-VU {
+  @apply bg-orange-100 text-orange-800 border-orange-200;
+}
+
+.status-EN {
+  @apply bg-red-100 text-red-800 border-red-200;
+}
+
+.status-CR {
+  @apply bg-red-200 text-red-900 border-red-300;
+}
+
+/* Use type badges */
+.use-medicinal {
+  @apply bg-blue-100 text-blue-800;
+}
+
+.use-ornamental {
+  @apply bg-pink-100 text-pink-800;
+}
+
+.use-timber {
+  @apply bg-amber-100 text-amber-800;
+}
+
+.use-cultural {
+  @apply bg-purple-100 text-purple-800;
+}
+
+.use-food {
+  @apply bg-green-100 text-green-800;
+}
